@@ -1,12 +1,11 @@
 # CSharp_ADO.NET
 
 @ ActiveX Data Objects for .NET
+@ A set of classes that expose data access services for .NET  
 
-
-Data Providers
----------------------
-- handle communication with the physical data store
-
-Data Set
+Two Main Componants 
 ---------------
-- represents the actual data
+Data Set- represents the actual data
+Data Providers - handle communication with the physical data store
+
+
