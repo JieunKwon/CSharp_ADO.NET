@@ -6,7 +6,8 @@
 
 Two Main Componants 
 ---------------
-Data Set- represents the actual data
-Data Providers - handle communication with the physical data store
+1. Data Set- represents the actual data
+
+2. Data Providers - handle communication with the physical data store
 
 
