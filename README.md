@@ -36,45 +36,45 @@ Objects of Data Providers
 
 SQL-Server Data Provider Code Example
 -------------
-static void HasRows(SqlConnection connection)
-{
-    using (connection)
+    static void HasRows(SqlConnection connection)
     {
-        SqlCommand command = new SqlCommand(
-          "SELECT CategoryID, CategoryName FROM Categories;",
-          connection);
-        connection.Open();
-
-        SqlDataReader reader = command.ExecuteReader();
-
-        if (reader.HasRows)
+        using (connection)
         {
-            while (reader.Read())
+            SqlCommand command = new SqlCommand(
+              "SELECT CategoryID, CategoryName FROM Categories;",
+              connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
             {
-                Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
-                    reader.GetString(1));
+                while (reader.Read())
+                {
+                    Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
+                        reader.GetString(1));
+                }
             }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            reader.Close();
         }
-        else
-        {
-            Console.WriteLine("No rows found.");
-        }
-        reader.Close();
     }
-}
 
 
-using System;
-using System.Data;
-using System.Data.SqlClient;
+    using System;
+    using System.Data;
+    using System.Data.SqlClient;
 
-class Program
-{
-    static void Main()
+    class Program
     {
-        string connectionString =
-            "Data Source=(local);Initial Catalog=Northwind;"
-            + "Integrated Security=true";
+        static void Main()
+        {
+            string connectionString =
+                "Data Source=(local);Initial Catalog=Northwind;"
+                + "Integrated Security=true";
 
         // Provide the query string with a parameter placeholder.
         string queryString =
