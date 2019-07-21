@@ -9,7 +9,7 @@
 
 Two Main Componants 
 ---------------
-1. Data Set- represents the actual data
+1. Data Set - represents the actual data
 
 2. Data Providers - handle communication with the physical data store
 
@@ -18,7 +18,7 @@ Data Providers
 ------------
 - SQL Server: Uses the System.Data.SqlClient namespace
 
-- OLE DB	: Uses the System.Data.OleDb namespace
+- OLE DB: Uses the System.Data.OleDb namespace
 
 - ODBC: Uses the System.Data.Odbc namespace
 
